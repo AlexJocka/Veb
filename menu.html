@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бизнес-Ланчи Москва - Собрать ланч</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Подключение файла стилей, который должен лежать рядом -->
+    <link rel="stylesheet" href="C:\Users\Alexe\Desktop\ЛР2 Веб\styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Бизнес-Ланчи Москва</h1>
+        <nav>
+            
+            <a href="C:\Users\Alexe\Desktop\ЛР2 Веб\Bolbot_Lr_1.html">Главная</a>
+            <a href="menu.html" class="active">Собрать ланч</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    
+    <main>
+       
+        <section>
+            <h2>Супы</h2>
+            <div class="dishes">
+                <div class="dish">
+                    <img src="images/Borsh.jpg" alt="Борщ с говядиной">
+                    <p class="price">230 руб.</p>
+                    <p class="name">Борщ с говядиной</p>
+                    <p class="weight">350 г</p>
+                    <button type="button">Добавить</button>
+                </div>
+                <div class="dish">
+                    <img src="images/Chiken_sup.jpeg" alt="Куриный суп с лапшой">
+                    <p class="price">210 руб.</p>
+                    <p class="name">Куриный суп с лапшой</p>
+                    <p class="weight">300 г</p>
+                    <button type="button">Добавить</button>
+                </div>
+                <div class="dish">
+                    <img src="images/Chese_sup.png" alt="Сырный суп с курицей">
+                    <p class="price">240 руб.</p>
+                    <p class="name">Сырный суп с курицей</p>
+                    <p class="weight">350 г</p>
+                    <button type="button">Добавить</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main dishes section -->
+        <section>
+            <h2>Главные блюда</h2>
+            <div class="dishes">
+                <div class="dish">
+                    <img src="images/Chiken_veg.jpg" alt="Куриное филе гриль">
+                    <p class="price">360 руб.</p>
+                    <p class="name">Куриное филе гриль с овощами</p>
+                    <p class="weight">420 г</p>
+                    <button type="button">Добавить</button>
+                </div>
+                <div class="dish">
+                    <img src="images/Carbonara.jpg" alt="Паста Карбонара">
+                    <p class="price">390 руб.</p>
+                    <p class="name">Паста Карбонара с беконом и сливочным соусом</p>
+                    <p class="weight">350 г</p>
+                    <button type="button">Добавить</button>
+                </div>
+                <div class="dish">
+                    <img src="images/Fish_With_Potato.jpg" alt="Запечённый лосось">
+                    <p class="price">450 руб.</p>
+                    <p class="name">Запечённый лосось с картошкой и лимоном</p>
+                    <p class="weight">380 г</p>
+                    <button type="button">Добавить</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drinks section -->
+        <section>
+            <h2>Напитки</h2>
+            <div class="dishes">
+                <div class="dish">
+                    <img src="images/Juce_but_not_Juce.jpg" alt="Домашний морс">
+                    <p class="price">110 руб.</p>
+                    <p class="name">Домашний морс</p>
+                    <p class="weight">250 мл</p>
+                    <button type="button">Добавить</button>
+                </div>
+                <div class="dish">
+                    <img src="images/Not_Juce.jpeg" alt="Компот из сухофруктов">
+                    <p class="price">120 руб.</p>
+                    <p class="name">Компот из сухофруктов</p>
+                    <p class="weight">250 мл</p>
+                    <button type="button">Добавить</button>
+                </div>
+                <div class="dish">
+                    <img src="images/Green_Tea.jpg" alt="Зелёный чай с мятой">
+                    <p class="price">100 руб.</p>
+                    <p class="name">Зелёный чай с мятой</p>
+                    <p class="weight">250 мл</p>
+                    <button type="button">Добавить</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order form section -->
+        <section class="order-section">
+            <h2>Оформить заказ</h2>
+            
+            <form method="POST" action="https://httpbin.org/post" class="order-form">
+                <!-- Левая колонка: Заказ -->
+                <fieldset class="form-column">
+                    <legend>Ваш заказ</legend>
+                    
+                    <div class="form-group">
+                        <label for="soup">Суп</label>
+                        <select id="soup" name="soup" required>
+                            <option value="">Выберите суп</option>
+                            <option value="borsh">Борщ с говядиной</option>
+                            <option value="chicken_soup">Куриный суп с лапшой</option>
+                            <option value="cheese_soup">Сырный суп с курицей</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="main_dish">Главное блюдо</label>
+                        <select id="main_dish" name="main_dish" required>
+                            <option value="">Выберите главное блюдо</option>
+                            <option value="chicken_grilled">Куриное филе гриль</option>
+                            <option value="carbonara">Паста Карбонара</option>
+                            <option value="salmon">Запечённый лосось</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="drink">Напиток</label>
+                        <select id="drink" name="drink" required>
+                            <option value="">Выберите напиток</option>
+                            <option value="mors">Домашний морс</option>
+                            <option value="compote">Компот из сухофруктов</option>
+                            <option value="green_tea">Зелёный чай с мятой</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">Комментарии</label>
+                        <textarea id="comments" name="comments" rows="5" placeholder="Ваши пожелания к заказу..."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Правая колонка: Данные -->
+                <fieldset class="form-column">
+                    <legend>Ваши данные</legend>
+
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" required placeholder="Иван">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                        <label for="newsletter">Подписаться на рассылку</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 000-00-00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Адрес доставки</label>
+                        <input type="text" id="address" name="address" required placeholder="Улица, дом, квартира">
+                    </div>
+
+                    <div class="form-group">
+                        <span class="label-title">Время доставки</span>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="delivery_type" value="asap" required>
+                                Как можно скорее
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="delivery_type" value="time">
+                                К определенному времени
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="delivery_time">Укажите время (07:00 - 23:00)</label>
+                        <!-- step="300" это 5 минут -->
+                        <input type="time" id="delivery_time" name="delivery_time" min="07:00" max="23:00" step="300">
+                    </div>
+                </fieldset>
+
+                <!-- Кнопки -->
+                <div class="form-buttons">
+                    <button type="reset" class="btn-reset">Сбросить</button>
+                    <button type="submit" class="btn-submit">Отправить</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacts">
+        <p>Телефон: <a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+        <p>Email: <a href="mailto:info@business-lunch.ru">info@business-lunch.ru</a></p>
+        <p>Адрес: Москва, Новый Арбат, д. 15, офис 301</p>
+        <p>Ежедневно с 9:00 до 21:00</p>
+    </footer>
+</body>
+</html>
