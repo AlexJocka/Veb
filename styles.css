@@ -114,10 +114,9 @@ p {
     margin-bottom: 15px;
 }
 
-/* Изображения в тексте */
+
 section.lunch-section img {
     width: 100%;
-    max-width: 800px;
     height: auto;
     border-radius: 8px;
     margin: 20px 0;
@@ -495,5 +494,6 @@ footer a:hover {
         margin: 0 auto;
     }
 }
+
 
 
