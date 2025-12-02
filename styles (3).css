@@ -1,0 +1,394 @@
+/* БАЗА */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    padding: 30px 24px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ТАБЫ */
+.tabs {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 12px;
+}
+
+.tab-btn {
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    color: #666;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: 0.2s;
+}
+
+.tab-btn:hover {
+    background: #e9ecff;
+    color: #4455cc;
+}
+
+.tab-btn.active {
+    color: #4455cc;
+    border-bottom-color: #4455cc;
+    background: #edf0ff;
+}
+
+/* КОНТЕНТ ТАБОВ */
+.tab-content {
+    display: none;
+    padding: 24px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.tab-content > p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+/* ФОРМЫ */
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d0;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.25);
+}
+
+button {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    background: #667eea;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #5560d0;
+}
+
+/* РЕЗУЛЬТАТЫ */
+.result {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    border-left: 4px solid #667eea;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.result-table th,
+.result-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.result-table th {
+    background: #667eea;
+    color: #fff;
+    text-align: left;
+}
+
+.result-table tr:nth-child(even) {
+    background: #f5f5f5;
+}
+
+/* ПОДСКАЗКА */
+.hint {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #fff8e1;
+    border-left: 4px solid #ffc107;
+    font-size: 13px;
+    color: #8a6d1a;
+}
+
+/* ИГРА: СТАТИСТИКА */
+.game-section {
+    padding: 20px 24px !important;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.game-header h2 {
+    font-size: 24px;
+}
+
+.level-indicator {
+    font-size: 14px;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.stat {
+    padding: 14px;
+    border-radius: 10px;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+.stat.correct {
+    background: #e2f5e8;
+    border: 1px solid #2e7d32;
+}
+
+.stat.incorrect {
+    background: #fde2e2;
+    border: 1px solid #c62828;
+}
+
+.stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* ИГРА: ВОПРОС + ОТВЕТ */
+.question-area {
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    background: #fafafa;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.question-counter {
+    font-size: 11px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.question {
+    margin-top: 12px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#answer {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d0;
+    font-size: 16px;
+}
+
+#answer.correct {
+    border-color: #2e7d32;
+    background: #e8f5e9;
+}
+
+#answer.incorrect {
+    border-color: #c62828;
+    background: #ffebee;
+}
+
+/* ИГРА: СООБЩЕНИЯ И КНОПКИ */
+.message {
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.message.success {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.message.error {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-submit {
+    flex: 1;
+}
+
+.btn-exit {
+    flex: 1;
+    background: #e53935;
+}
+
+.btn-exit:hover {
+    background: #c62828;
+}
+
+.btn-restart {
+    flex: 1;
+    background: #2e7d32;
+}
+
+/* МОДАЛКА */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 24px 20px;
+    border-radius: 14px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+}
+
+.modal h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.modal p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.modal-stats {
+    margin: 12px 0 16px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #f7f7f7;
+    font-size: 14px;
+}
+
+/* МОБИЛКА */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 20px 16px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .tab-content {
+        padding: 16px;
+    }
+
+    .question {
+        font-size: 24px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}

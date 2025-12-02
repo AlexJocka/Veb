@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Functions Demo + Math Game</title>
+    <link rel="stylesheet" href="styles (3).css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧪 Демонстрация JS Функций</h1>
+            <p class="subtitle">Интерактивная демонстрация всех 7 функций</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="switchTab('pow')">pow()</button>
+            <button class="tab-btn" onclick="switchTab('gcd')">gcd()</button>
+            <button class="tab-btn" onclick="switchTab('minDigit')">minDigit()</button>
+            <button class="tab-btn" onclick="switchTab('pluralize')">pluralize()</button>
+            <button class="tab-btn" onclick="switchTab('fibb')">fibb()</button>
+            <button class="tab-btn" onclick="switchTab('sort')">getSortedArray()</button>
+            <button class="tab-btn" onclick="switchTab('cesar')">cesar()</button>
+            <button class="tab-btn" onclick="switchTab('game')">🎮 Math Game</button>
+        </nav>
+
+        <!-- POW -->
+        <section id="pow" class="tab-content active">
+            <h2>pow(x, n) - Возведение в степень</h2>
+            <p>Возвращает x в степени n (без встроенной операции **)</p>
+            <div class="input-group">
+                <input type="number" id="powX" placeholder="x (основание)" value="2">
+                <input type="number" id="powN" placeholder="n (показатель)" value="5">
+                <button onclick="testPow()">Вычислить</button>
+            </div>
+            <div id="powResult" class="result"></div>
+        </section>
+
+        <!-- GCD -->
+        <section id="gcd" class="tab-content">
+            <h2>gcd(a, b) - Наибольший общий делитель</h2>
+            <p>Алгоритм Евклида (рекурсивный)</p>
+            <div class="input-group">
+                <input type="number" id="gcdA" placeholder="a" value="48">
+                <input type="number" id="gcdB" placeholder="b" value="18">
+                <button onclick="testGcd()">Найти НОД</button>
+            </div>
+            <div id="gcdResult" class="result"></div>
+        </section>
+
+        <!-- MINDIGIT -->
+        <section id="minDigit" class="tab-content">
+            <h2>minDigit(x) - Минимальная цифра</h2>
+            <p>Найти наименьшую цифру в числе (рекурсивный вариант)</p>
+            <div class="input-group">
+                <input type="number" id="minDigitX" placeholder="число" value="54782">
+                <button onclick="testMinDigit()">Найти мин</button>
+            </div>
+            <div id="minDigitResult" class="result"></div>
+        </section>
+
+        <!-- PLURALIZE -->
+        <section id="pluralize" class="tab-content">
+            <h2>pluralizeRecords(n) - Множественное число</h2>
+            <p>Правильная форма для русского языка (one, few, many)</p>
+            <div class="input-group">
+                <input type="number" id="pluralizeN" placeholder="количество" value="5">
+                <button onclick="testPluralize()">Сформировать</button>
+            </div>
+            <div id="pluralizeResult" class="result"></div>
+        </section>
+
+        <!-- FIBB -->
+        <section id="fibb" class="tab-content">
+            <h2>fibb(n) - Числа Фибоначчи</h2>
+            <p>n-ое число последовательности (с мемоизацией до n≤1000)</p>
+            <div class="input-group">
+                <input type="number" id="fibbN" placeholder="n (0-30)" value="10" max="30">
+                <button onclick="testFibb()">Вычислить</button>
+            </div>
+            <div id="fibbResult" class="result"></div>
+        </section>
+
+        <!-- SORT -->
+        <section id="sort" class="tab-content">
+            <h2>getSortedArray(array, key) - Сортировка объектов</h2>
+            <p>Сортировка массива объектов методом пузырька</p>
+            <div class="input-group">
+                <select id="sortKey">
+                    <option value="name">По имени</option>
+                    <option value="age">По возрасту</option>
+                    <option value="salary">По зарплате</option>
+                </select>
+                <button onclick="testSort()">Отсортировать</button>
+            </div>
+            <div id="sortResult" class="result"></div>
+        </section>
+
+        <!-- CESAR -->
+        <section id="cesar" class="tab-content">
+            <h2>cesar(str, shift, action) - Шифр Цезаря</h2>
+            <p>Кодирование/декодирование русского текста</p>
+            <div class="input-group">
+                <input type="text" id="cesarText" placeholder="Текст" value="привет мир">
+                <input type="number" id="cesarShift" placeholder="Сдвиг" value="3" min="1" max="32">
+                <select id="cesarAction">
+                    <option value="encode">Кодировать</option>
+                    <option value="decode">Декодировать</option>
+                </select>
+                <button onclick="testCesar()">Применить</button>
+            </div>
+            <div id="cesarResult" class="result"></div>
+            <div class="hint"> Попробуй расшифровать: "есх дю хусиънц гехспгхсп" (сдвиг 3, декодировать)</div>
+        </section>
+
+        <!-- MATH GAME -->
+        <section id="game" class="tab-content game-section">
+            <div class="game-header">
+                <h2>🧮 Математическая игра</h2>
+                <div class="level-indicator">Уровень: <span id="currentLevel">Начальный</span></div>
+            </div>
+
+            <div class="stats">
+                <div class="stat correct">
+                    <div class="stat-label">Верных</div>
+                    <div class="stat-value" id="correctCount">0</div>
+                </div>
+                <div class="stat incorrect">
+                    <div class="stat-label">Ошибок</div>
+                    <div class="stat-value" id="incorrectCount">0</div>
+                </div>
+            </div>
+
+            <div id="gameArea">
+                <div class="question-area">
+                    <div class="question-counter"><span id="questionNumber">1</span> / 10</div>
+                    <div class="question" id="question">2 + 2</div>
+                </div>
+
+                <div id="messageArea"></div>
+
+                <div class="input-group">
+                    <input type="number" id="answer" placeholder="Введите ответ" autofocus>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-submit" onclick="submitAnswer()">Ответить</button>
+                    <button class="btn-exit" onclick="exitGame()">Выход</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="modal" id="completionModal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Поздравляем!</h2>
+            <p id="modalMessage"></p>
+            <div class="modal-stats">
+                <p>Всего вопросов: <span id="modalTotal">10</span></p>
+                <p>Правильных ответов: <span id="modalCorrect">8</span></p>
+                <p>Процент успеха: <span id="modalPercent">80%</span></p>
+            </div>
+            <div class="button-group">
+                <button class="btn-restart" onclick="restartGame()">Начать заново</button>
+                <button class="btn-exit" onclick="exitFromModal()">Выход</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
