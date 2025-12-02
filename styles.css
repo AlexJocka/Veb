@@ -494,6 +494,16 @@ footer a:hover {
         margin: 0 auto;
     }
 }
+.contacts-title {
+  color: #fff;
+  border-bottom: 3px solid #fff;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  position: static;
+  left: auto;
+  transform: none;
+}
 
 
 
