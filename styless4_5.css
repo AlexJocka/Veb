@@ -254,4 +254,20 @@ legend {
     }
 }
 
+@media (max-width: 1000px) {
+    .dishes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .dishes {
+        grid-template-columns: 1fr;
+    }
+    
+    .order-form {
+        grid-template-columns: 1fr; /* Форма тоже станет в один столбец */
+    }
+}
+
 
