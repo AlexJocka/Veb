@@ -89,7 +89,7 @@ const dishes = [
     price: 480,
     category: 'main',
     count: '350 г',
-    image: 'imgs/Fish_Lus_Kus.jpg',
+    image: 'imgs/Fish_Kus_Kus.jpg',
     kind: 'fish'
   },
   {
@@ -276,4 +276,5 @@ const dishes = [
     kind: 'large'
   }
 ];
+
 
