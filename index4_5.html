@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="styless4_5.css">
     <link rel="stylesheet" href="styless.css">
     <style>
-        /* Доп. стили только для Лаб 5 (фильтры) */
+        
         .filters {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
-            padding-left: 20px; /* Чтобы было ровно */
+            padding-left: 20px;
         }
         .filters button {
             padding: 8px 16px;
@@ -36,7 +36,7 @@
             gap: 30px;
             padding: 20px;
         }
-        /* Скрываем секции если пустые (опционально) */
+        
         .hidden { display: none !important; }
     </style>
 </head>
@@ -122,11 +122,55 @@
                 </fieldset>
 
                 <fieldset class="form-column">
-                    <legend>Ваши данные</legend>
-                    <div class="form-group"><label>Имя</label><input type="text" name="name"></div>
-                    <div class="form-group"><label>Email</label><input type="email" name="email"></div>
-                    <button type="submit" class="btn-submit">Оформить</button>
-                </fieldset>
+    <legend>Ваши данные</legend>
+    
+    <div class="form-group">
+        <label for="name">Имя</label>
+        <input type="text" id="name" name="name" required placeholder="Иван">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 000-00-00">
+    </div>
+
+    <div class="form-group">
+        <label for="address">Адрес доставки</label>
+        <input type="text" id="address" name="address" required placeholder="Улица, дом, квартира">
+    </div>
+
+    <div class="form-group">
+        <label>Время доставки</label>
+        <div class="radio-group" style="margin-top: 5px;">
+            <label style="display:inline-flex; align-items:center; gap:5px; margin-right:15px;">
+                <input type="radio" name="delivery_type" value="asap" checked onchange="document.getElementById('time-input-block').style.display='none'"> 
+                Как можно скорее
+            </label>
+            <label style="display:inline-flex; align-items:center; gap:5px;">
+                <input type="radio" name="delivery_type" value="time" onchange="document.getElementById('time-input-block').style.display='block'"> 
+                К определенному времени
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group" id="time-input-block" style="display: none;">
+        <label for="delivery_time">Укажите время</label>
+        <input type="time" id="delivery_time" name="delivery_time" min="09:00" max="23:00">
+    </div>
+
+    <div class="form-group">
+        <label for="comments">Комментарий к заказу</label>
+        <textarea id="comments" name="comments" rows="3" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;" placeholder="Код домофона, этаж..."></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">Оформить</button>
+</fieldset>
+
             </form>
         </section>
     </main>
@@ -138,6 +182,7 @@
     <script src="index.js"></script>
 </body>
 </html>
+
 
 
 
