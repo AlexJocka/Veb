@@ -240,4 +240,26 @@ legend {
     background-color: #fff0eb; 
     box-shadow: 0 0 15px rgba(255, 99, 71, 0.4);
     transform: scale(1.05); 
+
+}
+.nav-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+
+.nav-link:hover {
+    background-color: #ffeae6; /* Светло-оранжевый */
+    color: tomato;
+}
+
+.nav-link.active {
+    color: tomato;
+    font-weight: bold;
+    border-bottom: 2px solid tomato;
 }
