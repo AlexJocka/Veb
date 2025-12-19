@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор Ланча</title>
+    <link rel="stylesheet" href="styles6.css">
+</head>
+<body>
+<header>
+    <h1>Собери свой ланч</h1>
+    <!-- ВОТ ЭТО ДОБАВЬ -->
+    <nav style="margin-top: 15px; text-align: center;">
+        <a href="index.html" class="nav-link active">Конструктор</a>
+        <a href="orders.html" class="nav-link">Мои заказы</a>
+    </nav>
+</header>
+
+
+    <main>
+        <h2 class="combo-section-title">Доступные варианты комбо</h2>
+        <div class="combo-options">
+            <div class="combo-card">
+                <div class="combo-icons">🥣 🥘 🥗 🥤</div>
+                <div class="combo-title">Полный обед</div>
+                <div class="combo-desc">Суп + Главное + Салат + Напиток</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-icons">🥣 🥘 🥤</div>
+                <div class="combo-title">Суп и второе</div>
+                <div class="combo-desc">Суп + Главное + Напиток</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-icons">🥣 🥗 🥤</div>
+                <div class="combo-title">Суп и салат</div>
+                <div class="combo-desc">Суп + Салат + Напиток</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-icons">🥘 🥗 🥤</div>
+                <div class="combo-title">Второе и салат</div>
+                <div class="combo-desc">Главное + Салат + Напиток</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-icons">🥘 🥤</div>
+                <div class="combo-title">Второе и напиток</div>
+                <div class="combo-desc">Главное + Напиток</div>
+            </div>
+        </div>
+
+        <section class="order-section">
+            <form class="order-form" id="order-form">
+                
+                <fieldset>
+                    <legend>Состав заказа</legend>
+
+                    <div class="form-group">
+                        <label for="select-soup">Суп</label>
+                        <select name="soup" id="select-soup"><option value="">— Не выбрано —</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="select-main-course">Главное блюдо</label>
+                        <select name="main_course" id="select-main-course"><option value="">— Не выбрано —</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="select-salad">Салат или стартер</label>
+                        <select name="salad" id="select-salad"><option value="">— Не выбрано —</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="select-drink">Напиток</label>
+                        <select name="drink" id="select-drink"><option value="">— Не выбрано —</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="select-dessert">Десерт</label>
+                        <select name="dessert" id="select-dessert"><option value="">— Не выбрано —</option></select>
+                    </div>
+
+                    <div id="total-cost">
+                        Итого: <span id="total-sum">0</span> ₽
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Оформление</legend>
+                    <div class="form-group">
+                        <label>Имя</label>
+                        <input type="text" name="full_name" required placeholder="Иван Иванов">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required placeholder="ivan@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="tel" name="phone" required placeholder="+7 (999) 000-00-00">
+                    </div>
+                    <div class="form-group">
+                        <label>Адрес доставки</label>
+                        <input type="text" name="delivery_address" required placeholder="Улица, дом, кв.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Время доставки</label>
+                        <div class="radio-group" style="margin-top: 5px; display: flex; gap: 15px;">
+                            <label><input type="radio" name="delivery_type" value="now" checked> Как можно скорее</label>
+                            <label><input type="radio" name="delivery_type" value="by_time"> Ко времени</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group hidden" id="time-select-block">
+                        <label>Укажите время</label>
+                        <input type="time" name="delivery_time" min="07:00" max="23:00" step="300">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Комментарий</label>
+                        <textarea name="comment" rows="2" style="width:100%; border:1px solid #ddd; border-radius:5px; padding:8px;"></textarea>
+                    </div>
+                    
+                    <div class="form-group" style="display:flex; align-items:center; gap:10px;">
+                        <input type="checkbox" name="subscribe" value="1" style="width:auto;"> 
+                        <label style="margin:0; font-weight:normal;">Подписаться на рассылку</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Оформить заказ</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <script src="7_8.js"></script>
+</body>
+</html>

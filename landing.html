@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch Delivery — Твой идеальный обед</title>
+    <!-- Подключаем Bootstrap 5 (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Подключаем иконки Bootstrap (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <style>
+        /* Небольшие кастомные стили поверх Бутстрапа */
+        :root {
+            --brand-color: #ff6347; /* Tomato */
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .text-brand {
+            color: var(--brand-color);
+        }
+
+        .btn-brand {
+            background-color: var(--brand-color);
+            border-color: var(--brand-color);
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-brand:hover {
+            background-color: #e5533d;
+            border-color: #e5533d;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #fff5f2 0%, #ffffff 100%);
+            padding: 100px 0;
+        }
+
+        .hero-img {
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .hero-img:hover {
+            transform: scale(1.02);
+        }
+
+        .feature-card {
+            border: none;
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--brand-color);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. НАВИГАЦИЯ (Navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="#">
+                <i class="bi bi-basket2-fill text-brand"></i> Lunch Delivery
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Преимущества</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Меню</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacts">Контакты</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="index4_5.html" class="btn btn-brand rounded-pill">Собрать ланч</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. ГЛАВНЫЙ ЭКРАН (Hero Section) -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <h1 class="display-4 fw-bold mb-4">
+                        Вкусные обеды <br>
+                        <span class="text-brand">с доставкой в офис</span>
+                    </h1>
+                    <p class="lead text-muted mb-5">
+                        Больше никаких контейнеров из дома. Собирайте идеальные комбо-наборы из свежих продуктов за пару кликов. Доставим горячим ровно к перерыву.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="index7_8.html" class="btn btn-brand btn-lg rounded-pill shadow">Заказать сейчас</a>
+                        <a href="#features" class="btn btn-outline-secondary btn-lg rounded-pill">Узнать больше</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <!-- Используем качественную картинку с Unsplash -->
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Healthy Salad Bowl" class="img-fluid hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ПРЕИМУЩЕСТВА (Features) -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="text-brand fw-bold text-uppercase ls-1">Почему мы?</span>
+                <h2 class="fw-bold display-6 mt-2">Лучший сервис доставки</h2>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Карточка 1 -->
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-stopwatch"></i>
+                        </div>
+                        <h4>Быстрая доставка</h4>
+                        <p class="text-muted">
+                            Привозим еду за 30 минут или к точно указанному времени. Ваш обед никогда не остынет в пути.
+                        </p>
+                    </div>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h4>Свежие продукты</h4>
+                        <p class="text-muted">
+                            Готовим только из качественных фермерских продуктов утром в день доставки. Никакой заморозки.
+                        </p>
+                    </div>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-wallet2"></i>
+                        </div>
+                        <h4>Выгодные комбо</h4>
+                        <p class="text-muted">
+                            Конструктор позволяет экономить до 30% по сравнению с заказом блюд по отдельности.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ПРИЗЫВ К ДЕЙСТВИЮ (CTA) -->
+    <section id="menu" class="py-5" style="background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center bg-white p-5 rounded-4 shadow-lg opacity-95">
+                    <h2 class="fw-bold mb-3">Голодны? Не ждите!</h2>
+                    <p class="lead mb-4 text-muted">
+                        Тысячи довольных клиентов уже пообедали с нами. Соберите свой первый заказ прямо сейчас и получите заряд энергии на весь день.
+                    </p>
+                    <a href="index7_8.html" class="btn btn-brand btn-lg rounded-pill px-5">Перейти в конструктор</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. КОНТАКТЫ И ФУТЕР -->
+    <footer id="contacts" class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-brand mb-3">Lunch Delivery</h5>
+                    <p class="text-secondary">
+                        Современный сервис доставки бизнес-ланчей. Мы заботимся о том, чтобы вы питались вкусно и вовремя.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Контакты</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> Москва, ул. Большая Семеновская, 38</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> +7 (999) 000-00-00</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@lunch-delivery.ru</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Мы в соцсетях</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-4"><i class="bi bi-telegram"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="text-center text-secondary small">
+                &copy; 2025 Lunch Delivery. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Bootstrap (Обязательно для работы бургера в меню) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
